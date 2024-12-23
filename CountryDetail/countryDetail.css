@@ -1,0 +1,78 @@
+.country-region {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+
+
+.country-region h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--purple);
+  }
+
+  .country-table-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+  }
+
+  .country-stat {
+    background: none;
+    color: var(--text-light);
+    padding: 15px;
+    width: 18rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .country-stat .icon {
+    margin-right: 20px;
+    font-size: 18px;
+  }
+  
+  .country-icon.red {
+    color: var(--red);
+  }
+  
+  .country-icon.green {
+    color: var(--green);
+  }
+
+  @media (max-width: 768px) {
+    .country-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .country-details {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .country-stats {
+      grid-template-columns: 1fr; /* Tek sütun yap */
+    }
+  
+    .country-stats-grid {
+      grid-template-columns: 1fr; /* Mobilde tek sütun yap */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .country-header h2 {
+      font-size: 20px;
+    }
+  
+    .country-region h3 {
+      font-size: 18px;
+    }
+  
+    .country-stat {
+      font-size: 12px; /* Daha küçük yazı tipi */
+    }
+  }

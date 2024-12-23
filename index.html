@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eiendomsmarkedet</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Graphic/graphic.css">
+    <link rel="stylesheet" href="CityDetails/city.css">
+    <link rel="stylesheet" href="CountryDetails/country.css">
+    <script src="Graphic/graphic.js" defer></script>
 </head>
 
 <body>
@@ -13,17 +17,82 @@
         <h1>Boligprisstatistikk</h1>
         <p>Her kan du finne boligprisstatistikk i Norge</p>
     </div>
-    <div>
-        //grafikk.js kommer her
-    </div>
-    <div>
-        //city.js kommer her
-    </div>
-    <div>
-        //country.js kommer her
+
+    <div class="container">
+        <div class="stats">
+                <div class="chart">
+                    <div class="dropdown">
+                        <h2 class="dropdown-toggle">Endring siste måned ▼</h2>
+                        <ul class="dropdown-menu">
+                            <li>Endring siste måned</li>
+                            <li>Endring sesongjustert siste måned</li>
+                            <li>Endring hittil i år</li>
+                            <li>Endring siste år</li>
+                            <li>Endring siste 5 år</li>
+                            <li>Endring siste 10 år</li>
+                        </ul>
+                    </div>
+                    <div class="details">
+                        <p><span class="circle purple"></span> Kommune</p>
+                        <p><span class="circle red  "></span>Norge</p>
+                        <p>Top Vekst: <span class="highlight green">Stavanger 0.87%</span></p>
+                        <p>Minst Vekst: <span class="highlight text-red">Tromsø -0.87%</span></p>
+                    </div>
+                    <br>
+                    <canvas id="barChart"></canvas>
+                </div>
+            
+
+            <div>
+                <!-- country.js kommer her -->
+                <div class="country-region">
+                    <h3>Norge</h3>
+                    <div class="country-table-grid">
+                        <div class="country-stat"><span class="icon red"><img src="/images/down.png" alt=""></span> Siste Måned: -0.3%</div>
+                        <br>
+                        <div class="country-stat"><span class="icon green"><img src="/images/down.png" alt=""></span> Sesongjusterte: 0.8%</div>
+                        <br>
+                        <div class="country-stat"><span class="icon green"><img src="/images/down.png" alt=""></span> Hittil i år: 9.8%</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- city.js kommer her -->
+                <div class="city-stats">
+                    <div class="city-region">
+                      <div class="city-dropdown">
+                        <h2 class="city-dropdown-toggle">Kristiansand ▼</h2>
+                        <ul class="city-dropdown-menu">
+                          <li>by 1</li>
+                          <li>by 2</li>
+                          <li>by 3</li>
+                          <li>by 4</li>
+                          <li>by 5</li>
+                          <li>by 61</li>
+                        </ul>
+                      </div>
+                      <div class="city-stats-grid">
+                        <div class="city-stats-grid">
+                          <div class="city-stat"><span class="icon red"><img src="/images/down.png" alt=""></span> Siste Måned: -0.3%</div>
+                          <div class="city-stat"><span class="icon green"><img src="/images/up.png" alt=""></span> Sesongjusterte: 0.8%</div>
+                          <div class="city-statCity">Kristiansand</div>
+                          <div class="city-stat"><span class="icon green"><img src="/images/down.png" alt=""></span> Hittil i år: 9.8%</div>
+                          <div class="city-stat"><span class="icon green"><img src="/images/down.png" alt=""></span> Siste år: 36.4%</div>
+                          <div class="city-statCity">Kvadratmeterpris 40 802</div>
+                          <div class="city-stat"><span class="icon green"><img src="/images/down.png" alt=""></span> Siste 5 år: 49.3%</div>
+                          <div class="city-stat"><span class="icon green"><img src="/images/down.png" alt=""></span> Siste 10 år: 49.3%</div>
+                          <div class="city-statCity">Gjennomsnittspris: 4 336 181</div>
+                        </div>
+              
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
     </div>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,144 @@
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.details .circle {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.details .purple {
+    background: var(--purple);
+}
+
+.details .red {
+    background: var(--red);
+}
+
+.details .text-red {
+    color: #f02e0c;
+}
+
+.details .highlight {
+    font-weight: bold;
+}
+
+.details .green {
+    color: var(--green);
+}
+
+.details .red {
+    color: var(--red);
+}
+
+.chart {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .details {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        
+    }
+}
+
+@media (max-width: 480px) {
+    .header h2 {
+        font-size: 20px;
+    }
+
+    .region h3 {
+        font-size: 18px;
+    }
+
+    .stat {
+        font-size: 12px;
+        /* Daha küçük yazı tipi */
+    }
+}
+
+li {
+    font-family: 'Arial', sans-serif;
+    color: rgb(242, 204, 244);
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    font-size: 20px;
+    color: var(--purple);
+    cursor: pointer;
+    padding: 10px 0;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--gray);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    padding: 8px 16px;
+    font-size: 16px;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background: var(--purple);
+    color: white;
+}
+
+.dropdown.show .dropdown-menu {
+    display: block;
+}

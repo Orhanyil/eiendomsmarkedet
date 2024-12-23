@@ -1,0 +1,124 @@
+.city-region {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .city-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .city-stat {
+    background: none;
+    color: var(--text-light);
+    padding: 15px;
+    width: 18rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .city-statCity {
+    background: var(--light-purple);
+    color: var(--purple);
+    padding: 15px;
+    width: 10rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bolder;
+  }
+
+  .city-stat .icon {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .city-icon.red {
+    color: var(--red);
+  }
+  
+  .city-icon.green {
+    color: var(--green);
+  }
+
+  @media (max-width: 768px) {
+    .city-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .city-details {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .city-stats {
+      grid-template-columns: 1fr; /* Tek sütun yap */
+    }
+  
+    .city-stats-grid {
+      grid-template-columns: 1fr; /* Mobilde tek sütun yap */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .city-header h2 {
+      font-size: 20px;
+    }
+  
+    .city-region h3 {
+      font-size: 18px;
+    }
+  
+    .city-stat {
+      font-size: 12px; /* Daha küçük yazı tipi */
+    }
+  }
+
+  .city-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .city-dropdown-toggle {
+    font-size: 20px;
+    color: var(--purple);
+    cursor: pointer;
+    padding: 10px 0;
+  }
+  
+  .city-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--gray);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    border-radius: 4px;
+    z-index: 1000;
+  }
+  
+  .city-dropdown-menu li {
+    padding: 8px 16px;
+    font-size: 16px;
+    color: var(--text-dark);
+    cursor: pointer;
+  }
+  
+  .city-dropdown-menu li:hover {
+    background: var(--purple);
+    color: white;
+  }
+  
+  .city-dropdown.show .dropdown-menu {
+    display: block;
+  }
