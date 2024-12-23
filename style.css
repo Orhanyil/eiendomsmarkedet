@@ -1,0 +1,26 @@
+:root {
+    --purple: #5F29B8;
+    --red: #F82734;
+    --text-red: #F82734;
+    --green: #4caf50;
+    --gray: #f3f3f3;
+    --text-dark: #333;
+    --text-light: #666;
+    --text-purple: #5F29B8;
+    --light-purple:#F0E7FF;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(255, 255, 255);
+    color: var(--text-purple);
+    font-weight: bolder;
+  }
+  
+  
