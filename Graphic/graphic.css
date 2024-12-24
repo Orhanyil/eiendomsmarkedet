@@ -91,7 +91,6 @@
 
     .stat {
         font-size: 12px;
-        /* Daha küçük yazı tipi */
     }
 }
 
@@ -101,19 +100,19 @@ li {
 
 }
 
-.dropdown {
+.graphic-dropdown {
     position: relative;
     display: inline-block;
 }
 
-.dropdown-toggle {
+.graphic-dropdown-toggle {
     font-size: 20px;
     color: var(--purple);
     cursor: pointer;
     padding: 10px 0;
 }
 
-.dropdown-menu {
+.graphic-dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
@@ -127,18 +126,18 @@ li {
     z-index: 1000;
 }
 
-.dropdown-menu li {
+.graphic-dropdown-menu li {
     padding: 8px 16px;
     font-size: 16px;
     color: var(--text-dark);
     cursor: pointer;
 }
 
-.dropdown-menu li:hover {
+.graphic-dropdown-menu li:hover {
     background: var(--purple);
     color: white;
 }
 
-.dropdown.show .dropdown-menu {
+.graphic-dropdown.show .graphic-dropdown-menu {
     display: block;
 }
