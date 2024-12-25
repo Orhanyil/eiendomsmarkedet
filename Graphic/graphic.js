@@ -1,4 +1,10 @@
 import { fetchData } from '../fetchData.js'; // fetchData fonksiyonunu içe aktar
+// import { cityDetail } from '../CityDetail/cityDetail.js';
+// import { countryDetail } from '../CountryDetail/countryDetail.js';
+
+// cityDetail.js();
+// countryDetail.js();
+
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
@@ -15,13 +21,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Dropdown toggle
   dropdownToggle.addEventListener('click', () => {
+    console.log("clicked");
     dropdown.classList.toggle('show');
+
+     if (dropdown.classList.contains('show')) {
+       dropdownToggle.textContent = "Endring siste måned ▲"; // Yukarı oku
+     } else {
+      dropdownToggle.textContent = "Endring siste måned ▼"; // Aşağı oku
+     }
   });
 
   // Dropdown dışına tıklanınca kapat
   document.addEventListener('click', (event) => {
     if (!dropdownToggle.contains(event.target) && !dropdown.contains(event.target)) {
       dropdown.classList.remove('show');
+       dropdownToggle.textContent = "Endring siste måned ▼"; // Oku aşağı döndür
     }
   });
 });

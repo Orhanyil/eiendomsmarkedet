@@ -71,12 +71,12 @@
 
     .stats {
         grid-template-columns: 1fr;
-        
+
     }
 
     .stats-grid {
         grid-template-columns: 1fr;
-        
+
     }
 }
 
@@ -138,6 +138,7 @@ li {
     color: white;
 }
 
-.graphic-dropdown.show .graphic-dropdown-menu {
+
+.graphic-dropdown-menu.show {
     display: block;
 }

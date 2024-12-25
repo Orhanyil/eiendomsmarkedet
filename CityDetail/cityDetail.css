@@ -123,7 +123,7 @@
   color: white;
 }
 
-.city-dropdown.show .dropdown-menu {
+.city-dropdown-menu.show{
   display: block;
 }
 

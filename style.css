@@ -1,6 +1,7 @@
 @import url(Graphic/graphic.css);
 @import url(CityDetail/cityDetail.css);
 @import url(CountryDetail/countryDetail.css);
+
 :root {
     --purple: #5F29B8;
     --red: #F82734;

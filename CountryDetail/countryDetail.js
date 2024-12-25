@@ -1,3 +1,4 @@
+export function countryDetail() {
 document.addEventListener("DOMContentLoaded", () => {
     const values = document.querySelectorAll(".value"); // Tüm "value" sınıflarını seç
   
@@ -10,4 +11,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  
+}
