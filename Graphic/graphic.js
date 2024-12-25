@@ -49,11 +49,11 @@ function initializeChart(data) {
           data: kommuneData, // Şehir verileri
           backgroundColor: 'rgba(92, 74, 199, 0.7)'
         },
-        {
-          label: 'Norge (Referans)',
-          data: norgeDataset, // Norge verileri
-          backgroundColor: 'rgba(240, 58, 95, 0.7)' // Kırmızı renk
-        }
+        // {
+        //   label: 'Norge (Referans)',
+        //   data: norgeDataset, // Norge verileri
+        //   backgroundColor: 'rgba(240, 58, 95, 0.7)' // Kırmızı renk
+        // }
       ]
     },
     options: {
