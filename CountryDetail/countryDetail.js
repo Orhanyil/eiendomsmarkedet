@@ -7,18 +7,13 @@ export function countryDetail(data) {
     return;
   }
 
-  // // Başlık kısmını ayarla
-  // const title = document.createElement('h3');
-  // title.textContent = "Norge";
-  // countryRegion.appendChild(title);
-
   // Grid sistemini oluştur
   const countryTableGrid = document.createElement('div');
   countryTableGrid.classList.add('country-table-grid');
   countryRegion.appendChild(countryTableGrid);
 
   // Her bir veri girişini oluştur ve ekle
-  Object.entries(data.Norge).slice(0,4).forEach(([key, value]) => {
+  Object.entries(data.Norge).slice(0, 4).forEach(([key, value]) => {
     const countryStat = document.createElement('div');
     countryStat.classList.add('country-stat');
 
@@ -37,14 +32,18 @@ export function countryDetail(data) {
 
     const valueElement = document.createElement('p');
     valueElement.classList.add('value');
-    valueElement.textContent = value;
+
+    // Değerin arkasına % işareti ekle
+    if (typeof value === 'string' && value.includes('%')) {
+      valueElement.textContent = value; // Zaten % içeriyorsa olduğu gibi ekle
+    } else if (!isNaN(parseFloat(value))) {
+      valueElement.textContent = `${value} %`; // Sayısal değerlerin sonuna % ekle
+    } else {
+      valueElement.textContent = value; // Diğer durumlarda olduğu gibi ekle
+    }
 
     // Renk ayarı (negatifse kırmızı, pozitifse yeşil)
-    if (typeof value === 'string' && value.includes('%')) {
-      valueElement.style.color = value.includes('-') ? 'var(--red)' : 'var(--green)';
-    } else if (!isNaN(parseFloat(value))) {
-      valueElement.style.color = parseFloat(value) < 0 ? 'var(--red)' : 'var(--green)';
-    }
+    valueElement.style.color = parseFloat(value) < 0 ? 'var(--red)' : 'var(--green)';
 
     // Yapıyı birleştir
     statText.appendChild(title);

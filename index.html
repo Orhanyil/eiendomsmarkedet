@@ -7,6 +7,7 @@
     <title>Eiendomsmarkedet</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div>
         <h1>Boligprisstatistikk</h1>
@@ -19,19 +20,12 @@
                 <div class="graphic-dropdown">
                     <h2 class="graphic-dropdown-toggle">Endring siste måned ▼</h2>
                     <ul class="graphic-dropdown-menu">
-                        <li>Endring siste måned</li>
-                        <li>Endring sesongjustert siste måned</li>
-                        <li>Endring hittil i år</li>
-                        <li>Endring siste år</li>
-                        <li>Endring siste 5 år</li>
-                        <li>Endring siste 10 år</li>
+                        <!-- Elementler dinamik olarak buraya eklenecek -->
                     </ul>
                 </div>
                 <div class="details">
-                    <!-- <p><span class="circle purple"></span> Kommune</p> -->
-                    <!-- <p><span class="circle red  "></span>Norge</p> -->
-                    <p>Top Vekst: <span class="highlight green"></span></p>
-                    <p>Minst Vekst: <span class="highlight text-red"></span></p>
+                    <p>Høyeste vekst: <span class="highlight green"></span></p>
+                    <p>Laveste vekst: <span class="highlight text-red"></span></p>
                 </div>
                 <br>
                 <canvas id="barChart"></canvas>
@@ -43,58 +37,42 @@
                 <div class="country-region">
                     <h3>Norge</h3>
                     <div class="country-table-grid">
-                        <!-- <div class="country-stat">
-                            <span class="icon red">
-                                <img src="/images/down.png" alt="Arrow down">
-                            </span>
-                            <div class="country-stat-text">
-                                <p class="title">Siste Måned</p>
-                                <br>
-                                <p class="value">-0.5%</p>
-                            </div>
+                        <!-- Norge istatistikleri dinamik olarak buraya eklenecek -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <!-- city.js kommer her -->
+            <div class="city-stats">
+                <div class="city-region">
+                    <div class="city-dropdown">
+                        <h2 class="city-dropdown-toggle">Oslo ▼</h2>
+                        <ul class="city-dropdown-menu">
+                            <!-- Şehirler dinamik olarak buraya eklenecek -->
+                        </ul>
+                    </div>
+                    <div class="city-detail-grid">
+                        <div class="city-stats-grid">
+                            <!-- Oslo istatistikleri varsayılan olarak buraya eklenecek -->
                         </div>
-                        <div class="country-stat">
-                            <span class="icon green">
-                                <img src="/images/up.png" alt="Arrow up">
-                            </span>
-                            <div class="country-stat-text">
-                                <p class="title">Sesongjusterte</p>
-                                <br>
-                                <p class="value">0.8%</p>
+                        <div class="city-total-grid">
+                            <div class="city-statCity">
+                                    <p class="title">Kvadratmeterpris</p>
+                                    <p class="value"></p>                              
                             </div>
-                        </div>
-                        <div class="country-stat">
-                            <span class="icon green">
-                                <img src="/images/up.png" alt="Arrow up">
-                            </span>
-                            <div class="country-stat-text">
-                                <p class="title">Hittil i år</p>
-                                <br>
-                                <p class="value">9.8%</p>
-                            </div> -->
+                            <div class="city-statCity">
+                                    <p class="title">Gjennomsnittspris</p>
+                                    <p class="value"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div>
-                <!-- city.js kommer her -->
-                <div class="city-stats">
-                    <div class="city-region">
-                      <div class="city-dropdown">
-                        <h2 class="city-dropdown-toggle">Oslo ▼</h2>
-                        <ul class="city-dropdown-menu">
-                          <!-- Şehirler dinamik olarak buraya eklenecek -->
-                        </ul>
-                      </div>
-                      <div class="city-stats-grid">
-                        <!-- Oslo istatistikleri varsayılan olarak buraya eklenecek -->
-                      </div>
-                    </div>
-                  </div>                  
-            </div>
-            <script type="module" src="Graphic/graphic.js" defer></script>
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </div>
+        <script type="module" src="Graphic/graphic.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>

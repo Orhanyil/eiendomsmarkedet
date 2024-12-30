@@ -4,6 +4,7 @@ export function cityDetail(data) {
   const dropdownToggle = document.querySelector('.city-dropdown-toggle');
   const dropdown = document.querySelector('.city-dropdown-menu');
   const statsGrid = document.querySelector('.city-stats-grid');
+  const cityTotalGrid = document.querySelector('.city-total-grid');
   let selectedCity = "Oslo"; // Varsayılan şehir
 
   // İlk yüklemede şehir verilerini güncelle
@@ -47,37 +48,63 @@ export function cityDetail(data) {
     }
 
     statsGrid.innerHTML = ''; // Önce eski içerikleri temizle
+    cityTotalGrid.innerHTML = ''; // 6 ve 7. indexleri güncellemek için temizle
 
     // Şehir istatistiklerini dinamik olarak oluştur ve ekle
-    for (const [key, value] of Object.entries(cityData)) {
-      const statElement = document.createElement('div');
-      statElement.classList.add('city-stat');
+    Object.entries(cityData).forEach(([key, value], index) => {
+      // 6 ve 7. indexleri atla
+      if (index === 6 || index === 7) {
+        const totalStatElement = document.createElement('div');
+        totalStatElement.classList.add('city-statCity');
 
-      // İkon ekleme (artış/azalış simgeleri)
-      const icon = document.createElement('span');
-      icon.classList.add('icon');
-      const iconImg = document.createElement('img');
-      // Artış/azalış simgesi
-      iconImg.src = parseFloat(value) >= 0 ? '../images/up.png' : '../images/down.png'; // Resim yolunu güncelledik
-      iconImg.alt = 'Arrow';
-      icon.appendChild(iconImg); // İkonu ekle
+        const statText = document.createElement('div');
+        statText.classList.add('stat-text');
+        const title = document.createElement('p');
+        title.classList.add('title');
+        title.textContent = key;
+        const statValue = document.createElement('p');
+        statValue.classList.add('value');
+        statValue.textContent = value; // Formatlama yapmadan olduğu gibi ekle
 
-      // Başlık ve değer alanları
-      const statText = document.createElement('div');
-      statText.classList.add('stat-text');
-      const title = document.createElement('p');
-      title.classList.add('title');
-      title.textContent = key;
-      const statValue = document.createElement('p');
-      statValue.classList.add('value');
-      statValue.textContent = value;
+        statText.appendChild(title);
+        statText.appendChild(statValue);
+        totalStatElement.appendChild(statText);
+        cityTotalGrid.appendChild(totalStatElement);
+      } else {
+        // Diğer tüm istatistikler için formatlama yap
+        const formattedValue = parseFloat(value) < 100 
+          ? `${parseFloat(value).toFixed(1)} %`  // 100'den küçükse "x.x %" formatı
+          : `${parseFloat(value).toFixed(0)} %`; // 100 veya daha büyükse "x %" formatı
 
-      statText.appendChild(title);
-      statText.appendChild(statValue);
-      statElement.appendChild(icon); // İkonu ekle
-      statElement.appendChild(statText);
+        const statElement = document.createElement('div');
+        statElement.classList.add('city-stat');
 
-      statsGrid.appendChild(statElement); // Grid'e yeni elemanı ekle
-    }
+        const icon = document.createElement('span');
+        icon.classList.add('icon');
+        const iconImg = document.createElement('img');
+        iconImg.src = parseFloat(value) >= 0 ? '../images/up.png' : '../images/down.png'; // Resim yolunu güncelledik
+        iconImg.alt = 'Arrow';
+        icon.appendChild(iconImg); // İkonu ekle
+
+        const statText = document.createElement('div');
+        statText.classList.add('stat-text');
+        const title = document.createElement('p');
+        title.classList.add('title');
+        title.textContent = key;
+        const statValue = document.createElement('p');
+        statValue.classList.add('value');
+        statValue.textContent = formattedValue;
+
+        // Negatif ve pozitif renk ayarı
+        statValue.style.color = parseFloat(value) < 0 ? 'var(--red)' : 'var(--green)';
+
+        statText.appendChild(title);
+        statText.appendChild(statValue);
+        statElement.appendChild(icon); // İkonu ekle
+        statElement.appendChild(statText);
+
+        statsGrid.appendChild(statElement); // Grid'e yeni elemanı ekle
+      }
+    });
   }
 }
