@@ -14,12 +14,13 @@
 .city-stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr ;
   gap: 10px;
 }
 
 .city-total-grid {
   display: grid;
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: 1fr 1fr;
   gap: 10px;
   text-align: center;
 }
@@ -28,7 +29,7 @@
   background: none;
   color: var(--text-purple);
   padding: 15px;
-  /* width: 18rem; */
+  width: 18rem;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -39,10 +40,9 @@
   background: var(--light-purple);
   color: var(--purple);
   padding: 15px;
-  /* width: 15rem; */
+  width: 15rem;
   height: 6rem;
   border-radius: 6px;
-  flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,18 +83,9 @@
    
   }
 
-  .city-detail-grid {
-    grid-template-columns: 1fr; 
-    gap: 15px;
-  }
-
   .city-stats-grid {
     grid-template-columns: 1fr;
    
-  }
-
-  .city-total-grid {
-    grid-template-rows: repeat(2, auto);
   }
 }
 
@@ -111,21 +102,6 @@
 
   .city-stat {
     font-size: 12px;
-  }
-
-  .city-detail-grid {
-    grid-template-columns: 1fr; 
-    gap: 10px;
-  }
-
-  .city-stats-grid {
-    grid-template-columns: 1fr; 
-    gap: 10px;
-  }
-
-  .city-statCity {
-    font-size: 14px;
-    padding: 10px;
   }
 }
 
