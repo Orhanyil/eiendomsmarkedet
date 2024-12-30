@@ -1,26 +1,18 @@
-.city-region {
-  background: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .city-detail-grid {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 1fr; /* Varsayılan olarak iki sütun */
   gap: 20px;
 }
 
 .city-stats-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr ;
+  grid-template-columns: 1fr 1fr; /* İki sütun düzeni */
   gap: 10px;
 }
 
 .city-total-grid {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: repeat(2, auto); /* Esnek satır düzeni */
   gap: 10px;
   text-align: center;
 }
@@ -29,7 +21,6 @@
   background: none;
   color: var(--text-purple);
   padding: 15px;
-  width: 18rem;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -40,117 +31,45 @@
   background: var(--light-purple);
   color: var(--purple);
   padding: 15px;
-  width: 15rem;
   height: 6rem;
   border-radius: 6px;
   display: flex;
+  flex-direction: column; /* İçerikleri dikey olarak hizalar */
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  font-weight: bolder;
-}
-
-.city-stat .icon {
-  margin-right: 10px;
-  font-size: 18px;
-}
-
-.city-icon.red {
-  color: var(--red);
-}
-
-.city-icon.green {
-  color: var(--green);
-}
-
-.city-total-grid .value {
-  color: var(--text-dark);
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
-  .city-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .city-details {
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .city-stats {
-    grid-template-columns: 1fr;
-   
+  .city-detail-grid {
+    grid-template-columns: 1fr; /* Tek sütun düzeni */
+    gap: 15px;
   }
 
   .city-stats-grid {
-    grid-template-columns: 1fr;
-   
+    grid-template-columns: 1fr; /* Tek sütun düzeni */
+    gap: 10px;
+  }
+
+  .city-total-grid {
+    grid-template-rows: repeat(2, auto); /* Esnek satır düzeni */
   }
 }
-
-
 
 @media (max-width: 480px) {
-  .city-header h2 {
-    font-size: 20px;
+  .city-detail-grid {
+    grid-template-columns: 1fr; /* Mobilde tek sütun */
+    gap: 10px;
   }
 
-  .city-region h3 {
-    font-size: 18px;
+  .city-stats-grid {
+    grid-template-columns: 1fr; /* Mobilde tek sütun */
+    gap: 10px;
   }
 
-  .city-stat {
-    font-size: 12px;
+  .city-statCity {
+    font-size: 14px; /* Daha küçük yazı boyutu */
+    padding: 10px;
   }
 }
-
-.city-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.city-dropdown-toggle {
-  font-size: 20px;
-  color: var(--purple);
-  cursor: pointer;
-  padding: 10px 0;
-}
-
-.city-dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--light-purple);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  margin: 0;
-  padding: 10px 0;
-  border-radius: 4px;
-  z-index: 1000;
-  width: 15rem;
-}
-
-.city-dropdown-menu li {
-  padding: 8px 16px;
-  font-size: 16px;
-  color: var(--text-dark);
-  cursor: pointer;
-}
-
-.city-dropdown-menu li:hover {
-  background: var(--purple);
-  color: white;
-}
-
-.city-dropdown-menu.show {
-  display: block;
-}
-
-li {
-  font-family: 'Georgia', sans-serif;
-  color: rgb(242, 204, 244);
-
-}
-
