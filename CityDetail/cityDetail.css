@@ -14,7 +14,7 @@
 .city-stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr ;
+  grid-template-rows: 1fr 1fr;
   gap: 10px;
 }
 
@@ -29,7 +29,6 @@
   background: none;
   color: var(--text-purple);
   padding: 15px;
-  width: 18rem;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -40,7 +39,6 @@
   background: var(--light-purple);
   color: var(--purple);
   padding: 15px;
-  width: 15rem;
   height: 6rem;
   border-radius: 6px;
   display: flex;
@@ -78,18 +76,16 @@
     gap: 5px;
   }
 
-  .city-stats {
+  .city-detail-grid {
     grid-template-columns: 1fr;
-   
+    gap: 10px;
   }
 
   .city-stats-grid {
     grid-template-columns: 1fr;
-   
+    gap: 10px;
   }
 }
-
-
 
 @media (max-width: 480px) {
   .city-header h2 {
@@ -102,6 +98,11 @@
 
   .city-stat {
     font-size: 12px;
+  }
+
+  .city-statCity {
+    font-size: 14px;
+    padding: 10px;
   }
 }
 
@@ -151,6 +152,4 @@
 li {
   font-family: 'Georgia', sans-serif;
   color: rgb(242, 204, 244);
-
 }
-
