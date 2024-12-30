@@ -5,54 +5,54 @@ export function cityDetail(data) {
   const dropdown = document.querySelector('.city-dropdown-menu');
   const statsGrid = document.querySelector('.city-stats-grid');
   const cityTotalGrid = document.querySelector('.city-total-grid');
-  let selectedCity = "Oslo"; // Varsayılan şehir
+  let selectedCity = "Oslo"; // Standardby
 
-  // İlk yüklemede şehir verilerini güncelle
+  // Oppdater bydata ved første innlasting
   if (!data[selectedCity]) {
-    selectedCity = Object.keys(data)[0]; // İlk şehir adı
+    selectedCity = Object.keys(data)[0]; // Henter første bynavn
   }
   updateCityStats(data, selectedCity);
 
-  // Dinamik olarak şehir listelerini dropdown'a ekle
-  const cities = Object.keys(data).filter(city => city !== 'Norge'); // 'Norge' hariç şehirleri al
-  dropdown.innerHTML = cities.map(city => `<li>${city}</li>`).join(''); // Şehirleri liste olarak ekle
+  // Legg byer dynamisk til dropdown
+  const cities = Object.keys(data).filter(city => city !== 'Norge'); // Ekskluder 'Norge'
+  dropdown.innerHTML = cities.map(city => `<li>${city}</li>`).join(''); // Oppretter liste over byer
 
-  // Dropdown toggle
+  // Dropdown-toggle
   dropdownToggle.addEventListener('click', () => {
     dropdown.classList.toggle('show');
 
-    // Ok yönünü değiştir
+    // Endrer pilretning
     dropdownToggle.textContent = dropdown.classList.contains('show')
       ? `${selectedCity} ▲`
       : `${selectedCity} ▼`;
   });
 
-  // Dropdown öğelerine tıklama olayı
+  // Klikkhendelse for dropdown-elementer
   dropdown.addEventListener('click', (event) => {
     if (event.target.tagName === 'LI') {
-      selectedCity = event.target.textContent.trim(); // Tıklanan şehri al
-      dropdownToggle.textContent = `${selectedCity} ▼`; // Başlığı güncelle
-      dropdown.classList.remove('show'); // Dropdown'ı kapat
+      selectedCity = event.target.textContent.trim(); // Henter valgt by
+      dropdownToggle.textContent = `${selectedCity} ▼`; // Oppdaterer tittel
+      dropdown.classList.remove('show'); // Lukker dropdown
 
-      console.log("Selected city:", selectedCity); // Konsola seçilen şehri yazdır
-      updateCityStats(data, selectedCity); // Seçilen şehre göre istatistikleri güncelle
+      console.log("Valgt by:", selectedCity); // Logger valgt by til konsollen
+      updateCityStats(data, selectedCity); // Oppdaterer statistikk for valgt by
     }
   });
 
-  // Dinamik olarak şehir istatistiklerini güncelleyen fonksiyon
+  // Funksjon for å oppdatere bystatistikk dynamisk
   function updateCityStats(data, city) {
-    const cityData = data[city]; // Seçilen şehrin verilerini al
+    const cityData = data[city]; // Henter data for valgt by
     if (!cityData) {
-      console.error(`Data for city ${city} not found`);
+      console.error(`Data for byen ${city} ikke funnet`);
       return;
     }
 
-    statsGrid.innerHTML = ''; // Önce eski içerikleri temizle
-    cityTotalGrid.innerHTML = ''; // 6 ve 7. indexleri güncellemek için temizle
+    statsGrid.innerHTML = ''; // Tømmer tidligere innhold
+    cityTotalGrid.innerHTML = ''; // Tømmer for å oppdatere indeks 6 og 7
 
-    // Şehir istatistiklerini dinamik olarak oluştur ve ekle
+    // Oppretter og legger til bystatistikk dynamisk
     Object.entries(cityData).forEach(([key, value], index) => {
-      // 6 ve 7. indexleri atla
+      // Hopp over indeks 6 og 7
       if (index === 6 || index === 7) {
         const totalStatElement = document.createElement('div');
         totalStatElement.classList.add('city-statCity');
@@ -64,17 +64,17 @@ export function cityDetail(data) {
         title.textContent = key;
         const statValue = document.createElement('p');
         statValue.classList.add('value');
-        statValue.textContent = value; // Formatlama yapmadan olduğu gibi ekle
+        statValue.textContent = value; // Legger til uten formatering
 
         statText.appendChild(title);
         statText.appendChild(statValue);
         totalStatElement.appendChild(statText);
         cityTotalGrid.appendChild(totalStatElement);
       } else {
-        // Diğer tüm istatistikler için formatlama yap
+        // Formaterer øvrige statistikker
         const formattedValue = parseFloat(value) < 100 
-          ? `${parseFloat(value).toFixed(1)} %`  // 100'den küçükse "x.x %" formatı
-          : `${parseFloat(value).toFixed(0)} %`; // 100 veya daha büyükse "x %" formatı
+          ? `${parseFloat(value).toFixed(1)} %`  // "x.x %" format for verdier under 100
+          : `${parseFloat(value).toFixed(0)} %`; // "x %" format for verdier 100 eller større
 
         const statElement = document.createElement('div');
         statElement.classList.add('city-stat');
@@ -82,9 +82,9 @@ export function cityDetail(data) {
         const icon = document.createElement('span');
         icon.classList.add('icon');
         const iconImg = document.createElement('img');
-        iconImg.src = parseFloat(value) >= 0 ? '../images/up.png' : '../images/down.png'; // Resim yolunu güncelledik
-        iconImg.alt = 'Arrow';
-        icon.appendChild(iconImg); // İkonu ekle
+        iconImg.src = parseFloat(value) >= 0 ? '../images/up.png' : '../images/down.png'; // Oppdaterer ikon basert på verdi
+        iconImg.alt = 'Pil';
+        icon.appendChild(iconImg); // Legger til ikon
 
         const statText = document.createElement('div');
         statText.classList.add('stat-text');
@@ -95,15 +95,15 @@ export function cityDetail(data) {
         statValue.classList.add('value');
         statValue.textContent = formattedValue;
 
-        // Negatif ve pozitif renk ayarı
+        // Setter farge for negativ og positiv verdi
         statValue.style.color = parseFloat(value) < 0 ? 'var(--red)' : 'var(--green)';
 
         statText.appendChild(title);
         statText.appendChild(statValue);
-        statElement.appendChild(icon); // İkonu ekle
+        statElement.appendChild(icon); // Legger til ikon
         statElement.appendChild(statText);
 
-        statsGrid.appendChild(statElement); // Grid'e yeni elemanı ekle
+        statsGrid.appendChild(statElement); // Legger til nytt element i grid
       }
     });
   }

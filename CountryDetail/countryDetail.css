@@ -4,7 +4,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 400px;
-  margin: 30px auto;
+  margin: 0px auto 20px auto;
 }
 
 .country-region h3 {
@@ -12,52 +12,44 @@
   color: var(--purple);
   margin-bottom: 25px;
   font-weight: bold;
-  text-align: flex-start;
+  text-align: flex-start; 
 }
 
 .country-table-grid {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 25px; 
 }
 
 .country-stat {
   display: flex;
   align-items: center;
-  gap: 30px; /* İkon ve metin arasında boşluk */
+  gap: 30px; 
   padding: 15px;
   border: none;
   border-radius: 10px;
-  transition: all 0.3s ease; /* Hover için yumuşak animasyon */
-}
-
-.country-stat:hover {
-  border-color: var(--purple);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .country-stat .icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #f3f3f3;
 }
 
 .country-stat .icon.red img {
-  filter: invert(26%) sepia(90%) saturate(5425%) hue-rotate(355deg) brightness(95%) contrast(89%);
+  color: var(--red);
+ 
 }
 
 .country-stat .icon.green img {
-  filter: invert(35%) sepia(79%) saturate(523%) hue-rotate(92deg) brightness(89%) contrast(80%);
+  color: var(--green);
+ 
 }
 
 .stat-text {
   display: flex;
   flex-direction: column;
-  gap: 5px; /* Başlık ve değer arasında boşluk */
+  gap: 5px;
 }
 
 .country-stat-text .title {
@@ -69,13 +61,12 @@
 
 .country-stat-text .value {
   font-size: 16px;
-  color: var(--text-dark);
+  color: var(--text-dark); 
   margin: 0;
 }
 
 .value {
   font-size: 16px;
   margin: 0;
-  font-weight: bold;
+  font-weight: bold; 
 }
-

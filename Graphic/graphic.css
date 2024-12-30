@@ -56,8 +56,6 @@
     gap: 20px;
 }
 
-
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;

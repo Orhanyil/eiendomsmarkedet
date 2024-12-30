@@ -80,12 +80,12 @@
 
   .city-stats {
     grid-template-columns: 1fr;
-    /* Tek sütun yap */
+   
   }
 
   .city-stats-grid {
     grid-template-columns: 1fr;
-    /* Mobilde tek sütun yap */
+   
   }
 }
 

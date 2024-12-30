@@ -1,27 +1,27 @@
 export function countryDetail(data) {
-  // Ana kapsayıcıyı seç
+  // Velger hovedbeholderen
   const countryRegion = document.querySelector('.country-table-grid');
   
   if (!countryRegion) {
-    console.error('Country element not found!');
+    console.error('Landelementet ble ikke funnet!');
     return;
   }
 
-  // Grid sistemini oluştur
+  // Oppretter et grid-system
   const countryTableGrid = document.createElement('div');
   countryTableGrid.classList.add('country-table-grid');
   countryRegion.appendChild(countryTableGrid);
 
-  // Her bir veri girişini oluştur ve ekle
+  // Oppretter og legger til hvert dataelement
   Object.entries(data.Norge).slice(0, 4).forEach(([key, value]) => {
     const countryStat = document.createElement('div');
     countryStat.classList.add('country-stat');
 
     const icon = document.createElement('span');
-    icon.classList.add('icon', data.Norge[key] < 0 ? 'red' : 'green'); // Negatif veya pozitif ikon
+    icon.classList.add('icon', data.Norge[key] < 0 ? 'red' : 'green'); // Negativt eller positivt ikon
     const iconImg = document.createElement('img');
     iconImg.src = data.Norge[key] < 0 ? '/images/down.png' : '/images/up.png';
-    iconImg.alt = data.Norge[key] < 0 ? 'Arrow down' : 'Arrow up';
+    iconImg.alt = data.Norge[key] < 0 ? 'Pil ned' : 'Pil opp';
     icon.appendChild(iconImg);
 
     const statText = document.createElement('div');
@@ -33,19 +33,19 @@ export function countryDetail(data) {
     const valueElement = document.createElement('p');
     valueElement.classList.add('value');
 
-    // Değerin arkasına % işareti ekle
+    // Legger til prosenttegn etter verdien
     if (typeof value === 'string' && value.includes('%')) {
-      valueElement.textContent = value; // Zaten % içeriyorsa olduğu gibi ekle
+      valueElement.textContent = value; // Hvis det allerede inneholder %, legg det som det er
     } else if (!isNaN(parseFloat(value))) {
-      valueElement.textContent = `${value} %`; // Sayısal değerlerin sonuna % ekle
+      valueElement.textContent = `${value} %`; // Legger til % for numeriske verdier
     } else {
-      valueElement.textContent = value; // Diğer durumlarda olduğu gibi ekle
+      valueElement.textContent = value; // Legger til som det er i andre tilfeller
     }
 
-    // Renk ayarı (negatifse kırmızı, pozitifse yeşil)
+    // Angir farge (rød for negativ, grønn for positiv)
     valueElement.style.color = parseFloat(value) < 0 ? 'var(--red)' : 'var(--green)';
 
-    // Yapıyı birleştir
+    // Kombinerer strukturen
     statText.appendChild(title);
     statText.appendChild(valueElement);
     countryStat.appendChild(icon);
