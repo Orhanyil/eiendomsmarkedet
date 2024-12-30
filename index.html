@@ -7,10 +7,10 @@
     <title>Eiendomsmarkedet</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div>
         <h1>Boligprisstatistikk</h1>
+
     </div>
 
     <div class="container">
@@ -28,10 +28,10 @@
                     </ul>
                 </div>
                 <div class="details">
-                    <p><span class="circle purple"></span> Kommune</p>
+                    <!-- <p><span class="circle purple"></span> Kommune</p> -->
                     <!-- <p><span class="circle red  "></span>Norge</p> -->
-                    <p>Top Vekst: <span class="highlight green">Stavanger 0.87%</span></p>
-                    <p>Minst Vekst: <span class="highlight text-red">Tromsø -0.87%</span></p>
+                    <p>Top Vekst: <span class="highlight green"></span></p>
+                    <p>Minst Vekst: <span class="highlight text-red"></span></p>
                 </div>
                 <br>
                 <canvas id="barChart"></canvas>
@@ -43,14 +43,14 @@
                 <div class="country-region">
                     <h3>Norge</h3>
                     <div class="country-table-grid">
-                        <div class="country-stat">
+                        <!-- <div class="country-stat">
                             <span class="icon red">
                                 <img src="/images/down.png" alt="Arrow down">
                             </span>
                             <div class="country-stat-text">
                                 <p class="title">Siste Måned</p>
                                 <br>
-                                <p class="value">-0.3%</p>
+                                <p class="value">-0.5%</p>
                             </div>
                         </div>
                         <div class="country-stat">
@@ -71,7 +71,7 @@
                                 <p class="title">Hittil i år</p>
                                 <br>
                                 <p class="value">9.8%</p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -81,118 +81,18 @@
                 <!-- city.js kommer her -->
                 <div class="city-stats">
                     <div class="city-region">
-                        <div class="city-dropdown">
-                            <h2 class="city-dropdown-toggle">Velg by ▼</h2>
-                            <ul class="city-dropdown-menu">
-                                <li>Kristiansand</li>
-                                <li>by 2</li>
-                                <li>by 3</li>
-                                <li>by 4</li>
-                                <li>by 5</li>
-                                <li>by 6</li>
-                            </ul>
-                        </div>
-                        <!-- <div class="city-dropdown">
-                            <h2 class="city-dropdown-toggle">Kristiansand ▼</h2>
-                            <ul class="city-dropdown-menu">
-                                <li>by 1</li>
-                                <li>by 2</li>
-                                <li>by 3</li>
-                                <li>by 4</li>
-                                <li>by 5</li>
-                                <li>by 6</li>
-                            </ul>
-                        </div> -->
-                        <div class="city-stats-grid">
-
-                            <div class="city-stat">
-                                <span class="icon red">
-                                    <img src="/images/down.png" alt="Arrow down">
-                                </span>
-                                <div class="stat-text">
-                                    <p class="title">Siste Måned</p>
-                                    <p class="value">-0.3%</p>
-                                </div>
-                            </div>
-
-                            <div class="city-stat">
-                                <span class="icon green">
-                                    <img src="/images/up.png" alt="Arrow down">
-                                </span>
-                                <div class="stat-text">
-                                    <p class="title">Sesongjusterte</p>
-                                    <p class="value">0.8%</p>
-                                </div>
-                            </div>
-
-                            <div class="city-statCity">Kristiansand</div>
-
-
-                            <div class="city-stat">
-                                <span class="icon green">
-                                    <img src="/images/up.png" alt="Arrow down">
-                                </span>
-                                <div class="stat-text">
-                                    <p class="title">Hittil i år</p>
-                                    <p class="value">9.8%</p>
-                                </div>
-                            </div>
-
-
-                            <div class="city-stat">
-                                <span class="icon green">
-                                    <img src="/images/up.png" alt="Arrow down">
-                                </span>
-                                <div class="stat-text">
-                                    <p class="title">Siste år</p>
-                                    <p class="value">12.8%</p>
-                                </div>
-                            </div>
-
-
-                            <div class="city-statCity">
-                                <div class="stat-text">
-                                    <p class="title">Kvadratmeterpris</p>
-                                    <p class="value">40 802</p>
-
-                                </div>
-                            </div>
-
-                            <div class="city-stat">
-                                <span class="icon green">
-                                    <img src="/images/up.png" alt="Arrow down">
-                                </span>
-                                <div class="stat-text">
-                                    <p class="title">Siste 5 år</p>
-                                    <p class="value">26.8%</p>
-                                </div>
-                            </div>
-
-
-
-                            <div class="city-stat">
-                                <span class="icon green">
-                                    <img src="/images/up.png" alt="Arrow down">
-                                </span>
-                                <div class="stat-text">
-                                    <p class="title">Siste 10 år</p>
-                                    <p class="value">49.3%</p>
-                                </div>
-                            </div>
-
-                            <div class="city-statCity">
-                                <div class="stat-text">
-                                    <p class="title">Gjennomsnittspris</p>
-                                    <p class="value">4 336 181</p>
-                                </div>
-                            </div>
-
-
-                        </div>
+                      <div class="city-dropdown">
+                        <h2 class="city-dropdown-toggle">Oslo ▼</h2>
+                        <ul class="city-dropdown-menu">
+                          <!-- Şehirler dinamik olarak buraya eklenecek -->
+                        </ul>
+                      </div>
+                      <div class="city-stats-grid">
+                        <!-- Oslo istatistikleri varsayılan olarak buraya eklenecek -->
+                      </div>
                     </div>
-                </div>
+                  </div>                  
             </div>
-
             <script type="module" src="Graphic/graphic.js" defer></script>
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
