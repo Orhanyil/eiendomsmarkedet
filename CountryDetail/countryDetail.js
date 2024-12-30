@@ -20,7 +20,7 @@ export function countryDetail(data) {
     const icon = document.createElement('span');
     icon.classList.add('icon', data.Norge[key] < 0 ? 'red' : 'green'); // Negativt eller positivt ikon
     const iconImg = document.createElement('img');
-    iconImg.src = data.Norge[key] < 0 ? '../images/down.png' : '../images/up.png';
+    iconImg.src = data.Norge[key] < 0 ? '/eiendomsmarkedet/images/down.png' : '/eiendomsmarkedet/images/up.png';
     iconImg.alt = data.Norge[key] < 0 ? 'Pil ned' : 'Pil opp';
     icon.appendChild(iconImg);
 

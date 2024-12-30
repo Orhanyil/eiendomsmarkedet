@@ -82,7 +82,7 @@ export function cityDetail(data) {
         const icon = document.createElement('span');
         icon.classList.add('icon');
         const iconImg = document.createElement('img');
-        iconImg.src = parseFloat(value) >= 0 ? '../images/up.png' : '../images/down.png'; // Oppdaterer ikon basert på verdi
+        iconImg.src = parseFloat(value) >= 0 ? '/eiendomsmarkedet/images/up.png' : '/eiendomsmarkedet/images/down.png'; // Oppdaterer ikon basert på verdi
         iconImg.alt = 'Pil';
         icon.appendChild(iconImg); // Legger til ikon
 
